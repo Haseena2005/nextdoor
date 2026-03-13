@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXTDOOR Marketplace – Unique Handmade Crafts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:var(--beige);">
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo" onclick="location.href='index.html'">NEXT<span>DOOR</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="customer.html">Explore Services</a></li>
+      <li><a href="marketplace.html" class="active">Marketplace</a></li>
+      <li><a href="workshops.html">Workshops</a></li>
+      <li><a href="jobs.html">Post a Job</a></li>
+      <li><a href="customer_dashboard.html">Dashboard</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+  </div>
+</nav>
+
+<div style="background:white;padding:4rem 0;text-align:center;border-bottom:2px solid var(--border);">
+  <div class="container">
+    <h1 style="font-size:3rem;margin-bottom:14px;">The Handmade Marketplace</h1>
+    <p class="text-muted" style="max-width:600px;margin:0 auto;font-size:1.1rem;">Authentic handcrafted products sold directly by the masters. Each piece tells a story.</p>
+  </div>
+</div>
+
+<div class="container py-5">
+  <!-- Filter bar -->
+  <div class="flex-between mb-5" style="background:white;padding:20px 28px;border-radius:18px;border:1.5px solid var(--border);box-shadow:var(--card-shadow);">
+    <div class="flex-start">
+      <span style="font-weight:800;color:var(--primary);">Filter:</span>
+      <button class="btn btn-primary btn-sm" id="filterAll" onclick="filterProducts('all',this)">All Crafts</button>
+      <button class="btn btn-outline btn-sm" id="filterTextiles" onclick="filterProducts('Textiles',this)">Textiles</button>
+      <button class="btn btn-outline btn-sm" id="filterPottery" onclick="filterProducts('Pottery',this)">Pottery</button>
+      <button class="btn btn-outline btn-sm" id="filterArt" onclick="filterProducts('Art',this)">Wall Art</button>
+    </div>
+    <select class="form-control" style="width:200px;" id="marketSort" onchange="renderProducts()">
+      <option value="default">Sort: Newest</option>
+      <option value="low">Price: Low to High</option>
+      <option value="high">Price: High to Low</option>
+    </select>
+  </div>
+
+  <div class="grid-4" id="productsGrid">
+    <!-- injected by JS -->
+  </div>
+
+  <!-- Custom Order CTA -->
+  <div style="margin-top:60px;background:var(--primary);border-radius:30px;padding:50px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+    <div>
+      <h2 style="color:white;margin-bottom:10px;">Request a Custom Craft</h2>
+      <p style="color:#cbd5e1;max-width:500px;">Can't find what you're looking for? Request a personalized handmade product from our specialists. Specify size, design, budget, and deadline.</p>
+    </div>
+    <button class="btn btn-secondary" style="padding:18px 36px;font-size:1.05rem;" onclick="document.getElementById('customModal').style.display='flex'">Request Custom Order</button>
+  </div>
+</div>
+
+<!-- Custom Order Modal -->
+<div id="customModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;justify-content:center;align-items:center;">
+  <div style="background:white;border-radius:28px;padding:48px;max-width:550px;width:90%;max-height:90vh;overflow-y:auto;position:relative;">
+    <button onclick="document.getElementById('customModal').style.display='none'" style="position:absolute;top:20px;right:24px;background:none;border:none;font-size:1.8rem;cursor:pointer;color:var(--muted);">&times;</button>
+    <h2 style="margin-bottom:24px;">Custom Craft Request</h2>
+    <form onsubmit="event.preventDefault();document.getElementById('customModal').style.display='none';addToCartGeneric('Custom Order');">
+      <div class="form-group">
+        <label class="form-label">Craft Type</label>
+        <select class="form-control" required>
+          <option value="">Select category</option>
+          <option>Pottery / Ceramics</option>
+          <option>Handloom / Textiles</option>
+          <option>Mandala / Wall Art</option>
+          <option>Tailoring / Apparel</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Design Description</label>
+        <textarea class="form-control" placeholder="Describe your design, size, colors..." required></textarea>
+      </div>
+      <div class="grid-2">
+        <div class="form-group">
+          <label class="form-label">Budget (₹)</label>
+          <input type="number" class="form-control" placeholder="5000" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Deadline</label>
+          <input type="date" class="form-control" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" style="padding:16px;">Submit Request</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="container text-center">
+    <div class="footer-logo">NEXT<span>DOOR</span></div>
+    <p style="color:#64748b;font-size:0.85rem;">&copy; 2026 NEXTDOOR. Trusted Hands Just Next Door.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+let currentFilter = 'all';
+const allProducts = [
+  { name: "Hand-painted Clay Pot", price: 1200, img: "images/potter.jpg", creator: "Ravi Kumar", tag: "Pottery" },
+  { name: "Indigo Silk Saree",     price: 8500, img: "images/tailor.jpg", creator: "Lakshmi Weavers", tag: "Textiles" },
+  { name: "Floral Mandala Frame",  price: 4500, img: "images/mandela_artist.jpg", creator: "Priya Sharma", tag: "Art" },
+  { name: "Terracotta Earrings",   price: 1500, img: "images/handamdecrafts.jpg", creator: "Traditional Crafts", tag: "Pottery" },
+  { name: "Handwoven Cotton Stole", price: 2200, img: "images/tailor.jpg", creator: "Lakshmi Weavers", tag: "Textiles" },
+  { name: "Folk Art Print",        price: 3000, img: "images/folk_artist.jpg", creator: "Rajesh Folk Arts", tag: "Art" },
+];
+
+function filterProducts(tag, btn) {
+  currentFilter = tag;
+  document.querySelectorAll('[id^=filter]').forEach(b=>{ b.className='btn btn-outline btn-sm'; });
+  if(btn) { btn.className='btn btn-primary btn-sm'; }
+  renderProducts();
+}
+
+function renderProducts() {
+  const sort = document.getElementById('marketSort')?.value || 'default';
+  let list = currentFilter === 'all' ? [...allProducts] : allProducts.filter(p => p.tag === currentFilter);
+  if (sort === 'low')  list.sort((a,b) => a.price - b.price);
+  if (sort === 'high') list.sort((a,b) => b.price - a.price);
+  document.getElementById('productsGrid').innerHTML = list.map(p => `
+    <div class="card">
+      <div class="card-img-container">
+        <img src="${p.img}" class="card-img" alt="${p.name}">
+      </div>
+      <div class="card-body">
+        <h3 class="card-title" style="font-size:1rem;margin-bottom:4px;">${p.name}</h3>
+        <p class="text-muted" style="font-size:0.82rem;margin-bottom:16px;">By <strong>${p.creator}</strong></p>
+        <div class="flex-between mt-auto">
+          <span style="font-weight:900;font-size:1.15rem;color:var(--primary);">₹${p.price.toLocaleString()}</span>
+          <button class="btn btn-primary btn-sm" onclick="addToCartGeneric('${p.name}')">Add to Cart</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+renderProducts();
+</script>
+</body>
+</html>

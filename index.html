@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEXTDOOR - Trusted Hands Just Next Door. Find local professionals, buy handmade products, and attend workshops.">
+  <title>NEXTDOOR – Trusted Hands Just Next Door</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo" onclick="location.href='index.html'" role="button" aria-label="Home">NEXT<span>DOOR</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="customer.html">Explore Services</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="workshops.html">Workshops</a></li>
+      <li><a href="jobs.html">Post a Job</a></li>
+      <li><a href="customer_dashboard.html">Dashboard</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="professional_register.html" class="btn btn-primary btn-sm" style="display:none;" id="joinBtn">Join as Professional</a>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <div></div><div></div><div></div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <img src="images/potter.jpg" class="hero-image" alt="Professional at work">
+  <div class="container hero-content">
+    <h1>Find <span style="color:var(--secondary);">Trusted Professionals</span><br>Right Next Door</h1>
+    <p>A platform where customers can easily discover and connect with reliable professionals and creative workers nearby.</p>
+    <div class="flex-center">
+      <a href="customer.html" class="btn btn-primary" style="padding:18px 40px;font-size:1.1rem;">Explore Services</a>
+      <a href="professional_register.html" class="btn btn-ghost" style="padding:18px 40px;font-size:1.1rem;">Join as Professional</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>5,000+</strong><span>Verified Professionals</span></div>
+      <div class="hero-stat"><strong>12,000+</strong><span>Services Completed</span></div>
+      <div class="hero-stat"><strong>8,000+</strong><span>Happy Neighbors</span></div>
+      <div class="hero-stat"><strong>150+</strong><span>Locations Covered</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EXPLORE CATEGORIES ═══ -->
+<section class="py-5" style="background:var(--beige);">
+  <div class="container">
+    <h2 class="section-title">Explore Categories</h2>
+    <div class="grid-4">
+
+      <!-- Home Services → Electrician image -->
+      <div class="cat-card" onclick="location.href='customer.html?cat=Home Services'" role="button">
+        <img src="images/electrician.jpg" alt="Electrician project">
+        <div class="cat-overlay">
+          <h3 class="cat-title">Home Services</h3>
+          <p>Electrician, plumber, carpenter, painter.</p>
+        </div>
+      </div>
+
+      <!-- Traditional Arts → Potter at wheel -->
+      <div class="cat-card" onclick="location.href='customer.html?cat=Traditional Arts'" role="button">
+        <img src="images/potter.jpg" alt="Craftsman shaping clay">
+        <div class="cat-overlay">
+          <h3 class="cat-title">Creative Work</h3>
+          <p>Pottery makers, mandala artists, wood craftsmen.</p>
+        </div>
+      </div>
+
+      <!-- Fashion & Textiles → Handloom weaving -->
+      <div class="cat-card" onclick="location.href='customer.html?cat=Fashion & Textiles'" role="button">
+        <img src="images/tailor.jpg" alt="Textile work">
+        <div class="cat-overlay">
+          <h3 class="cat-title">Fashion &amp; Textile</h3>
+          <p>Weavers, tailors, embroidery workers.</p>
+        </div>
+      </div>
+
+      <!-- Events & Beauty → Mehendi henna design on hands -->
+      <div class="cat-card" onclick="location.href='customer.html?cat=Events & Beauty'" role="button">
+        <img src="images/mehandi_artist.jpg" alt="Beauty service">
+        <div class="cat-overlay">
+          <h3 class="cat-title">Events &amp; Beauty</h3>
+          <p>Mehendi artists, makeup artists, decorators.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURED ARTISANS ═══ -->
+<section class="py-5" style="background:white;">
+  <div class="container">
+    <div class="flex-between mb-5">
+      <h2 style="margin:0;">Featured Professionals</h2>
+      <a href="customer.html" class="btn btn-outline btn-sm">View All →</a>
+    </div>
+    <div class="grid-3">
+
+      <!-- Card 1: Pottery → potter shaping clay -->
+      <div class="card">
+        <div class="card-img-container">
+          <img src="images/potter.jpg" class="card-img" alt="Ravi Kumar - Pottery">
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-title">Ravi Kumar</h3>
+            <span class="badge badge-verified">✔ Verified</span>
+          </div>
+          <p class="card-subtitle">🏺 Pottery Maker &nbsp;•&nbsp; ⭐ 4.9 &nbsp;•&nbsp; Chennai</p>
+          <p class="card-text" style="margin-bottom:14px;flex:1;">Master of traditional terracotta decor and custom clay wares. 15 years on the wheel.</p>
+          <p style="font-size:0.8rem;font-weight:700;color:var(--muted);">📅 15 Yrs Experience</p>
+          <a href="artisan_portfolio.html?id=1" class="btn btn-outline btn-block mt-auto" style="margin-top:18px;">View Profile</a>
+        </div>
+      </div>
+
+      <!-- Card 2: Mehendi Artist → intricate henna design on hands -->
+      <div class="card">
+        <div class="card-img-container">
+          <img src="images/mehandi_artist.jpg" class="card-img" alt="Anita Devi - Mehendi Artist">
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-title">Anita Devi</h3>
+            <span class="badge badge-verified">✔ Verified</span>
+          </div>
+          <p class="card-subtitle">🌸 Mehendi Artist &nbsp;•&nbsp; ⭐ 4.8 &nbsp;•&nbsp; Chennai</p>
+          <p class="card-text" style="margin-bottom:14px;flex:1;">Exquisite bridal henna, Arabic and traditional patterns for all celebrations.</p>
+          <p style="font-size:0.8rem;font-weight:700;color:var(--muted);">📅 8 Yrs Experience</p>
+          <a href="professional_profile.html?id=2" class="btn btn-outline btn-block mt-auto" style="margin-top:18px;">View Profile</a>
+        </div>
+      </div>
+
+      <!-- Card 3: Electrician → electrician fixing wiring -->
+      <div class="card">
+        <div class="card-img-container">
+          <img src="images/electrician.jpg" class="card-img" alt="Suresh M. - Electrician">
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3 class="card-title">Suresh M.</h3>
+            <span class="badge badge-verified">✔ Verified</span>
+          </div>
+          <p class="card-subtitle">⚡ Electrician &nbsp;•&nbsp; ⭐ 5.0 &nbsp;•&nbsp; Bangalore</p>
+          <p class="card-text" style="margin-bottom:14px;flex:1;">Resident wiring expert, specializing in efficient repairs and safety-first installations.</p>
+          <p style="font-size:0.8rem;font-weight:700;color:var(--muted);">📅 5 Yrs Experience</p>
+          <a href="professional_profile.html?id=3" class="btn btn-outline btn-block mt-auto" style="margin-top:18px;">View Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRENDING ARTISANS ═══ -->
+<section class="py-5" style="background:var(--primary);">
+  <div class="container">
+    <h2 class="section-title text-white" style="color:white;">Trending Professionals</h2>
+    <div class="grid-4">
+
+      <!-- Weaver -->
+      <div class="card">
+        <div class="card-img-container">
+          <img src="images/tailor.jpg" class="card-img" alt="Lakshmi Weavers - Handloom">
+        </div>
+        <div class="card-body">
+          <div class="card-header"><h3 class="card-title" style="font-size:1rem;">Lakshmi Weavers</h3><span class="badge badge-hot">🔥 Trending</span></div>
+          <p class="card-subtitle">🧵 Weaver &nbsp;•&nbsp; ⭐ 4.9</p>
+          <a href="professional_profile.html?id=5" class="btn btn-outline btn-block btn-sm mt-auto" style="margin-top:14px;">View Profile</a>
+        </div>
+      </div>
+
+      <!-- Mandala Artist -->
+      <div class="card">
+        <div class="card-img-container">
+          <img src="images/mandela_artist.jpg" class="card-img" alt="Priya Sharma - Mandala Artist">
+        </div>
+        <div class="card-body">
+          <div class="card-header"><h3 class="card-title" style="font-size:1rem;">Priya Sharma</h3><span class="badge badge-hot">🔥 Trending</span></div>
+          <p class="card-subtitle">🎨 Mandala Artist &nbsp;•&nbsp; ⭐ 4.7</p>
+          <a href="professional_profile.html?id=4" class="btn btn-outline btn-block btn-sm mt-auto" style="margin-top:14px;">View Profile</a>
+        </div>
+      </div>
+
+      <!-- Painter -->
+      <div class="card">
+        <div class="card-img-container">
+          <img src="images/painter.jpg" class="card-img" alt="Vijay Singh - Wall Painter">
+        </div>
+        <div class="card-body">
+          <div class="card-header"><h3 class="card-title" style="font-size:1rem;">Vijay Singh</h3><span class="badge badge-hot">🔥 Trending</span></div>
+          <p class="card-subtitle">🖌️ Painter &nbsp;•&nbsp; ⭐ 4.5</p>
+          <a href="artisan_portfolio.html?id=6" class="btn btn-outline btn-block btn-sm mt-auto" style="margin-top:14px;">View Profile</a>
+        </div>
+      </div>
+
+      <!-- Folk Artist -->
+      <div class="card">
+        <div class="card-img-container">
+          <img src="images/folk_artist.jpg" class="card-img" alt="Rajesh Folk Arts - Folk Artist">
+        </div>
+        <div class="card-body">
+          <div class="card-header"><h3 class="card-title" style="font-size:1rem;">Rajesh Folk Arts</h3><span class="badge badge-hot">🔥 Trending</span></div>
+          <p class="card-subtitle">🎭 Folk Artist &nbsp;•&nbsp; ⭐ 5.0</p>
+          <a href="artisan_portfolio.html?id=9" class="btn btn-outline btn-block btn-sm mt-auto" style="margin-top:14px;">View Profile</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRENDING PRODUCTS ═══ -->
+<section class="py-5" style="background:var(--beige);">
+  <div class="container">
+    <div class="flex-between mb-5">
+      <h2 style="margin:0;">Trending Handmade Products</h2>
+      <a href="marketplace.html" style="font-weight:800;color:var(--secondary);">View All →</a>
+    </div>
+    <div class="grid-4">
+
+      <!-- Pottery product -->
+      <div class="card">
+        <div class="card-img-container">
+          <img src="images/potter.jpg" class="card-img" alt="Hand-painted Clay Pot">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title" style="font-size:1.05rem;margin-bottom:4px;">Hand-painted Clay Pot</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin-bottom:16px;">By Ravi Kumar</p>
+          <div class="flex-between mt-auto">
+            <span style="font-weight:900;font-size:1.2rem;color:var(--primary);">₹1,200</span>
+            <button class="btn btn-primary btn-sm" onclick="addToCartGeneric('Clay Pot')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mandala product -->
+      <div class="card">
+        <div class="card-img-container">
+          <img src="images/mandela_artist.jpg" class="card-img" alt="Floral Mandala Art">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title" style="font-size:1.05rem;margin-bottom:4px;">Floral Mandala Frame</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin-bottom:16px;">By Priya Sharma</p>
+          <div class="flex-between mt-auto">
+            <span style="font-weight:900;font-size:1.2rem;color:var(--primary);">₹4,500</span>
+            <button class="btn btn-primary btn-sm" onclick="addToCartGeneric('Mandala Art')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weaving product -->
+      <div class="card">
+        <div class="card-img-container">
+          <img src="images/tailor.jpg" class="card-img" alt="Indigo Silk Saree">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title" style="font-size:1.05rem;margin-bottom:4px;">Indigo Silk Saree</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin-bottom:16px;">By Lakshmi Weavers</p>
+          <div class="flex-between mt-auto">
+            <span style="font-weight:900;font-size:1.2rem;color:var(--primary);">₹8,500</span>
+            <button class="btn btn-primary btn-sm" onclick="addToCartGeneric('Silk Saree')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jewelry product -->
+      <div class="card">
+        <div class="card-img-container">
+          <img src="images/handamdecrafts.jpg" class="card-img" alt="Terracotta Jewelry">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title" style="font-size:1.05rem;margin-bottom:4px;">Terracotta Earrings</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin-bottom:16px;">By Traditional Crafts</p>
+          <div class="flex-between mt-auto">
+            <span style="font-weight:900;font-size:1.2rem;color:var(--primary);">₹1,500</span>
+            <button class="btn btn-primary btn-sm" onclick="addToCartGeneric('Earrings')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ UPCOMING WORKSHOPS ═══ -->
+<section class="py-5" style="background:white;">
+  <div class="container">
+    <div class="flex-between mb-5">
+      <h2 style="margin:0;">Upcoming Workshops</h2>
+      <a href="workshops.html" class="btn btn-outline btn-sm">All Workshops →</a>
+    </div>
+    <div class="grid-2">
+
+      <!-- Pottery Workshop -->
+      <div class="card" style="flex-direction:row;height:auto;overflow:hidden;">
+        <div style="width:260px;flex-shrink:0;overflow:hidden;">
+          <img src="images/potter.jpg" style="width:100%;height:100%;object-fit:cover;" alt="Pottery Workshop">
+        </div>
+        <div class="card-body" style="padding:28px;">
+          <h3 class="card-title" style="font-size:1.2rem;">Pottery Wheel Basics</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin-bottom:12px;">Host: Ravi Kumar &nbsp;•&nbsp; Oct 25 &nbsp;•&nbsp; 3 Hours</p>
+          <p class="card-text" style="flex:1;">Learn to shape clay on a traditional potter's wheel in this hands-on masterclass.</p>
+          <button class="btn btn-primary btn-sm mt-auto" style="margin-top:16px;width:fit-content;" onclick="location.href='workshops.html'">Register Now</button>
+        </div>
+      </div>
+
+      <!-- Mandala Workshop -->
+      <div class="card" style="flex-direction:row;height:auto;overflow:hidden;">
+        <div style="width:260px;flex-shrink:0;overflow:hidden;">
+          <img src="images/mandela_artist.jpg" style="width:100%;height:100%;object-fit:cover;" alt="Mandala Workshop">
+        </div>
+        <div class="card-body" style="padding:28px;">
+          <h3 class="card-title" style="font-size:1.2rem;">Mandala Painting Class</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin-bottom:12px;">Host: Priya Sharma &nbsp;•&nbsp; Oct 28 &nbsp;•&nbsp; 2 Hours</p>
+          <p class="card-text" style="flex:1;">Unlock creativity with symmetrical mandala patterns. All skill levels welcome.</p>
+          <button class="btn btn-primary btn-sm mt-auto" style="margin-top:16px;width:fit-content;" onclick="location.href='workshops.html'">Register Now</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NEARBY DISCOVERY ═══ -->
+<section class="py-5" style="background:var(--beige);">
+  <div class="container">
+    <div style="background:var(--primary);border-radius:30px;padding:60px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;">
+      <div>
+        <h2 style="color:white;margin-bottom:16px;font-size:2.2rem;">Find Professionals Near You</h2>
+        <p style="color:#cbd5e1;max-width:500px;font-size:1.05rem;">Discover skilled craftsmen in your neighborhood for immediate service. Share your location and we'll connect you with the best nearby professionals.</p>
+      </div>
+      <div style="display:flex;gap:16px;flex-shrink:0;flex-wrap:wrap;">
+        <a href="customer.html" class="btn btn-primary" style="padding:18px 36px;">Discover Nearby</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer id="contact">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start;margin-bottom:60px;flex-wrap:wrap;">
+      <div>
+        <div class="footer-logo">NEXT<span>DOOR</span></div>
+        <p style="color:#94a3b8;max-width:340px;font-weight:500;line-height:1.8;">Connecting you with trusted hands right next door. Support the professionals that make your community better.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;">
+        <div>
+          <h4 style="color:white;font-size:0.9rem;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Platform</h4>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="customer.html" style="color:#94a3b8;font-weight:600;">Explore Services</a>
+            <a href="marketplace.html" style="color:#94a3b8;font-weight:600;">Marketplace</a>
+            <a href="workshops.html" style="color:#94a3b8;font-weight:600;">Workshops</a>
+            <a href="jobs.html" style="color:#94a3b8;font-weight:600;">Post a Job</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="color:white;font-size:0.9rem;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">For Professionals</h4>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="professional_register.html" style="color:#94a3b8;font-weight:600;">Join Now</a>
+            <a href="professional_dashboard.html" style="color:#94a3b8;font-weight:600;">Dashboard</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="color:white;font-size:0.9rem;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Company</h4>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="#" style="color:#94a3b8;font-weight:600;">About Us</a>
+            <a href="#" style="color:#94a3b8;font-weight:600;">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <p style="color:#64748b;font-size:0.85rem;font-weight:600;">&copy; 2026 NEXTDOOR. Trusted Hands Just Next Door.</p>
+      <p style="color:#64748b;font-size:0.85rem;">Made with ❤️ for the professional community</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+  // show join button only on desktop
+  (function() {
+    const btn = document.getElementById('joinBtn');
+    if (btn && window.innerWidth >= 900) btn.style.display = 'inline-flex';
+  })();
+</script>
+</body>
+</html>

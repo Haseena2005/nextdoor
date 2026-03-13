@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Profile – NEXTDOOR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:var(--beige);">
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo" onclick="location.href='index.html'">NEXT<span>DOOR</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="customer.html">Explore Services</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="workshops.html">Workshops</a></li>
+      <li><a href="jobs.html">Post a Job</a></li>
+      <li><a href="customer_dashboard.html">Dashboard</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+  </div>
+</nav>
+
+<div class="container py-5">
+  <div style="display:grid;grid-template-columns:1fr 360px;gap:40px;align-items:start;">
+
+    <!-- Main Column -->
+    <main>
+      <!-- Profile Header -->
+      <div style="background:white;border-radius:28px;border:1.5px solid var(--border);padding:48px;margin-bottom:32px;box-shadow:var(--card-shadow);">
+        <div class="flex-start mb-4" style="gap:28px;flex-wrap:wrap;">
+          <!-- Profile image = Pottery (relevant to skill) -->
+          <img src="images/potter.jpg" style="width:130px;height:130px;border-radius:24px;object-fit:cover;border:5px solid var(--beige-dk);" alt="Ravi Kumar - Pottery Professional">
+          <div>
+            <h1 style="font-size:2.6rem;margin:0;line-height:1.1;">Ravi Kumar</h1>
+            <p class="text-muted" style="font-size:1.05rem;margin-top:8px;">Master Potter &nbsp;•&nbsp; <span class="badge badge-verified">✔ Verified Professional</span></p>
+            <div class="flex-start mt-4" style="gap:24px;font-weight:700;color:var(--primary);">
+              <span>📍 Chennai, TN</span>
+              <span>📅 15+ Years Experience</span>
+              <span>⭐ 4.9 (48 reviews)</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:1.05rem;color:var(--muted);line-height:1.8;">I specialise in traditional Tamil terracotta techniques — functional cookware and ornamental garden art. Every piece is wheel-thrown and kiln-fired. My mission is to keep this 2,000-year-old art form alive in modern Indian homes.</p>
+      </div>
+
+      <!-- Portfolio Gallery -->
+      <div style="background:white;border-radius:28px;border:1.5px solid var(--border);padding:40px;margin-bottom:32px;box-shadow:var(--card-shadow);">
+        <h2 style="font-size:1.6rem;margin-bottom:24px;border-bottom:3px solid var(--beige-dk);padding-bottom:12px;">Work Portfolio</h2>
+        <!-- All gallery images = Pottery-relevant -->
+        <div class="grid-3" style="gap:14px;">
+          <div style="height:190px;border-radius:16px;overflow:hidden;">
+            <img src="images/potter.jpg" style="width:100%;height:100%;object-fit:cover;" alt="Potter at wheel">
+          </div>
+          <div style="height:190px;border-radius:16px;overflow:hidden;">
+            <img src="images/potter.jpg" style="width:100%;height:100%;object-fit:cover;" alt="Painted clay pots">
+          </div>
+          <div style="height:190px;border-radius:16px;overflow:hidden;">
+            <img src="images/handamdecrafts.jpg" style="width:100%;height:100%;object-fit:cover;" alt="Terracotta pottery">
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Offered -->
+      <div style="background:white;border-radius:28px;border:1.5px solid var(--border);padding:40px;margin-bottom:32px;box-shadow:var(--card-shadow);">
+        <h2 style="font-size:1.6rem;margin-bottom:24px;border-bottom:3px solid var(--beige-dk);padding-bottom:12px;">Services Offered</h2>
+        <div class="grid-2" style="gap:16px;">
+          <div style="padding:20px;background:var(--beige);border-radius:16px;border:1.5px solid var(--border);">
+            <h4 style="font-size:1rem;margin-bottom:6px;">Custom Pottery Design</h4>
+            <p class="text-muted" style="font-size:0.88rem;">Personalized clay pieces shaped to your vision.</p>
+          </div>
+          <div style="padding:20px;background:var(--beige);border-radius:16px;border:1.5px solid var(--border);">
+            <h4 style="font-size:1rem;margin-bottom:6px;">Traditional Restoration</h4>
+            <p class="text-muted" style="font-size:0.88rem;">Repair and restore antique terracotta items.</p>
+          </div>
+          <div style="padding:20px;background:var(--beige);border-radius:16px;border:1.5px solid var(--border);">
+            <h4 style="font-size:1rem;margin-bottom:6px;">Bulk Workshop Orders</h4>
+            <p class="text-muted" style="font-size:0.88rem;">Customised gifts for events and corporates.</p>
+          </div>
+          <div style="padding:20px;background:var(--beige);border-radius:16px;border:1.5px solid var(--border);">
+            <h4 style="font-size:1rem;margin-bottom:6px;">Masterclass Teaching</h4>
+            <p class="text-muted" style="font-size:0.88rem;">One-on-one or group pottery sessions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reviews -->
+      <div style="background:white;border-radius:28px;border:1.5px solid var(--border);padding:40px;box-shadow:var(--card-shadow);margin-bottom:32px;">
+        <div class="flex-between mb-4" style="border-bottom:3px solid var(--beige-dk);padding-bottom:12px;">
+          <h2 style="font-size:1.6rem;margin:0;">Customer Reviews</h2>
+          <button class="btn btn-outline btn-sm" onclick="document.getElementById('reviewForm').style.display='block'">Write a Review</button>
+        </div>
+        
+        <!-- Review Form (Hidden by default) -->
+        <div id="reviewForm" style="display:none;background:var(--beige);padding:24px;border-radius:18px;margin-bottom:24px;border:1.5px dashed var(--border);">
+          <h4 style="margin-bottom:12px;">Share your experience</h4>
+          <div style="display:flex;gap:10px;margin-bottom:14px;font-size:1.2rem;color:var(--secondary);cursor:pointer;">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <textarea class="form-control" style="height:100px;margin-bottom:14px;" placeholder="Tell others what you liked about the service..."></textarea>
+          <button class="btn btn-primary btn-sm" onclick="alert('Review submitted! It will be live after moderation.'); document.getElementById('reviewForm').style.display='none'">Submit Review</button>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:18px;">
+          <div style="padding:24px;background:var(--beige);border-radius:16px;border:1.5px solid var(--border);">
+            <div class="flex-between mb-2"><strong>Anita Subramanian</strong><span style="color:var(--secondary);">⭐⭐⭐⭐⭐</span></div>
+            <p class="text-muted" style="font-size:0.9rem;font-style:italic;">"The custom planters Ravi made are the talk of the neighbourhood. A true master craftsman."</p>
+          </div>
+          <div style="padding:24px;background:var(--beige);border-radius:16px;border:1.5px solid var(--border);">
+            <div class="flex-between mb-2"><strong>Krishnan M.</strong><span style="color:var(--secondary);">⭐⭐⭐⭐⭐</span></div>
+            <p class="text-muted" style="font-size:0.9rem;font-style:italic;">"Booked him for our cultural event. The pottery demonstration was absolutely captivating."</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside style="position:sticky;top:90px;">
+      <div style="background:white;border-radius:28px;border:1.5px solid var(--border);padding:36px;box-shadow:0 24px 50px rgba(30,58,138,0.12);">
+        <h3 style="font-size:1.4rem;margin-bottom:22px;">Service Rates</h3>
+        <ul style="list-style:none;margin-bottom:28px;">
+          <li class="flex-between" style="padding:16px 0;border-bottom:2px solid var(--beige-dk);">
+            <span style="font-weight:700;">Custom Design</span>
+            <span style="font-weight:900;color:var(--primary);">₹1,000<span style="font-size:0.7rem;font-weight:500;color:var(--muted);">/hr</span></span>
+          </li>
+          <li class="flex-between" style="padding:16px 0;border-bottom:2px solid var(--beige-dk);">
+            <span style="font-weight:700;">Restoration</span>
+            <span style="font-weight:900;color:var(--primary);">₹1,200<span style="font-size:0.7rem;font-weight:500;color:var(--muted);">/hr</span></span>
+          </li>
+          <li class="flex-between" style="padding:16px 0;">
+            <span style="font-weight:700;">Bulk / Events</span>
+            <span style="font-weight:900;color:var(--secondary);">Get Quote</span>
+          </li>
+        </ul>
+        <a href="booking.html?id=1" class="btn btn-primary btn-block" style="padding:16px;font-size:1.05rem;margin-bottom:12px;">Book Service Now</a>
+        <button class="btn btn-outline btn-block" style="padding:16px;" onclick="alert('Message sent to Ravi!')">Message Professional</button>
+        <p class="text-muted text-center" style="font-size:0.8rem;margin-top:16px;">Avg. Response: &lt; 2 Hours</p>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container text-center">
+    <div class="footer-logo">NEXT<span>DOOR</span></div>
+    <p style="color:#64748b;font-size:0.85rem;">&copy; 2026 NEXTDOOR. Trusted Hands Just Next Door.</p>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

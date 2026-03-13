@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Jobs – NEXTDOOR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:var(--beige);">
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo" onclick="location.href='index.html'">NEXT<span>DOOR</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="customer.html">Explore Services</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="workshops.html">Workshops</a></li>
+      <li><a href="jobs.html" class="active">Post a Job</a></li>
+      <li><a href="customer_dashboard.html">Dashboard</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+  </div>
+</nav>
+
+<div style="background:white;padding:4rem 0;text-align:center;border-bottom:2px solid var(--border);">
+  <div class="container">
+    <h1 style="font-size:3rem;margin-bottom:14px;">Post a Service Requirement</h1>
+    <p class="text-muted" style="max-width:600px;margin:0 auto;font-size:1.05rem;">Describe what you need. Verified professionals in your area will apply and connect with you.</p>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div style="display:grid;grid-template-columns:400px 1fr;gap:40px;align-items:start;">
+
+    <!-- Post Job Form -->
+    <aside>
+      <div style="background:white;border-radius:28px;border:1.5px solid var(--border);padding:40px;box-shadow:var(--card-shadow);">
+        <h2 style="font-size:1.5rem;margin-bottom:24px;border-bottom:3px solid var(--beige-dk);padding-bottom:12px;">Post a Requirement</h2>
+        <form onsubmit="postJob(event)">
+          <div class="form-group">
+            <label class="form-label">Job Title</label>
+            <input type="text" id="jobTitle" class="form-control" placeholder="e.g. Need House Wall Painter" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Skill Required</label>
+            <select id="jobSkill" class="form-control" required>
+              <option value="">Select skill</option>
+              <option>Painter</option>
+              <option>Electrician</option>
+              <option>Plumber</option>
+              <option>Tailor</option>
+              <option>Potter</option>
+              <option>Mehendi Artist</option>
+              <option>Weaver</option>
+              <option>Mandala Artist</option>
+              <option>Folk Artist</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Location</label>
+            <input type="text" id="jobLoc" class="form-control" placeholder="City, State" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Budget (₹)</label>
+            <input type="number" id="jobBudget" class="form-control" placeholder="5000" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Description</label>
+            <textarea id="jobDesc" class="form-control" placeholder="Describe the work, timing, quality needed..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" style="padding:16px;">Post Job</button>
+        </form>
+      </div>
+    </aside>
+
+    <!-- Listings -->
+    <main>
+      <div class="flex-between mb-4">
+        <h2 style="margin:0;">Active Opportunities</h2>
+        <span class="badge badge-new" id="jobCountBadge">2 Open</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px;" id="jobsList">
+
+        <!-- Job 1: Painter -->
+        <div style="background:white;border-radius:24px;border:1.5px solid var(--border);padding:36px;box-shadow:var(--card-shadow);transition:var(--transition);"
+          onmouseover="this.style.borderColor='var(--secondary)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div class="flex-between mb-3">
+            <h3 style="margin:0;font-size:1.4rem;color:var(--primary);">Wall Painting for 3BHK Apartment</h3>
+            <span style="font-weight:900;font-size:1.6rem;color:var(--secondary);">₹12,000</span>
+          </div>
+          <div class="flex-start mb-4" style="gap:24px;font-weight:700;color:var(--muted);font-size:0.88rem;">
+            <span>📍 Adyar, Chennai</span>
+            <span>📅 Needed by: Oct 30</span>
+            <span>👤 Rajesh G.</span>
+            <span class="badge badge-verified">Painter</span>
+          </div>
+          <p style="color:var(--muted);margin-bottom:24px;">Looking for 2 skilled painters for interior emulsion work. Paint will be provided. High-quality textured finishing required.</p>
+          <div class="flex-between">
+            <span class="text-muted" style="font-size:0.85rem;font-weight:700;">4 Applications</span>
+            <button class="btn btn-primary btn-sm" onclick="alert('Application Sent!')">Apply for Job</button>
+          </div>
+        </div>
+
+        <!-- Job 2: Tailor -->
+        <div style="background:white;border-radius:24px;border:1.5px solid var(--border);padding:36px;box-shadow:var(--card-shadow);transition:var(--transition);"
+          onmouseover="this.style.borderColor='var(--secondary)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div class="flex-between mb-3">
+            <h3 style="margin:0;font-size:1.4rem;color:var(--primary);">Custom Wedding Lehenga Stitching</h3>
+            <span style="font-weight:900;font-size:1.6rem;color:var(--secondary);">₹8,000</span>
+          </div>
+          <div class="flex-start mb-4" style="gap:24px;font-weight:700;color:var(--muted);font-size:0.88rem;">
+            <span>📍 Bangalore</span>
+            <span>📅 Needed by: Nov 15</span>
+            <span>👤 Meera S.</span>
+            <span class="badge badge-verified">Tailor</span>
+          </div>
+          <p style="color:var(--muted);margin-bottom:24px;">Master tailor needed with experience in heavy embroidery and bridal wear. Must handle delicate silk and provide boutique finishing.</p>
+          <div class="flex-between">
+            <span class="text-muted" style="font-size:0.85rem;font-weight:700;">1 Application</span>
+            <button class="btn btn-primary btn-sm" onclick="alert('Application Sent!')">Apply for Job</button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<footer>
+  <div class="container text-center">
+    <div class="footer-logo">NEXT<span>DOOR</span></div>
+    <p style="color:#64748b;font-size:0.85rem;">&copy; 2026 NEXTDOOR. Trusted Hands Just Next Door.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+function postJob(e) {
+  e.preventDefault();
+  const title = document.getElementById('jobTitle').value;
+  const skill = document.getElementById('jobSkill').value;
+  const loc   = document.getElementById('jobLoc').value;
+  const budget= document.getElementById('jobBudget').value;
+  const desc  = document.getElementById('jobDesc').value;
+  const list  = document.getElementById('jobsList');
+  const badge = document.getElementById('jobCountBadge');
+  const card = document.createElement('div');
+  card.style.cssText = 'background:white;border-radius:24px;border:1.5px solid var(--secondary);padding:36px;box-shadow:var(--card-shadow);';
+  card.innerHTML = `<div class="flex-between mb-3"><h3 style="margin:0;font-size:1.4rem;color:var(--primary);">${title}</h3><span style="font-weight:900;font-size:1.6rem;color:var(--secondary);">₹${parseInt(budget).toLocaleString()}</span></div>
+    <div class="flex-start mb-4" style="gap:24px;font-weight:700;color:var(--muted);font-size:0.88rem;"><span>📍 ${loc}</span><span class="badge badge-new">${skill}</span></div>
+    <p style="color:var(--muted);margin-bottom:24px;">${desc}</p>
+    <div class="flex-between"><span class="badge badge-nearby">Just Posted</span><button class="btn btn-outline btn-sm">Apply for Job</button></div>`;
+  list.prepend(card);
+  e.target.reset();
+  badge.textContent = (list.children.length) + ' Open';
+  addToCartGeneric('Job Posted Successfully');
+}
+</script>
+</body>
+</html>

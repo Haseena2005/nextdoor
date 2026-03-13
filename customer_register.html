@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join as Customer – NEXTDOOR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:var(--beige);">
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo" onclick="location.href='index.html'">NEXT<span>DOOR</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="customer.html">Find Professionals</a></li>
+      <li><a href="professional_register.html" style="color:var(--secondary);">Professional Sign Up</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+  </div>
+</nav>
+
+<div class="container py-5">
+  <div class="max-600" style="background:white;border-radius:28px;border:1.5px solid var(--border);padding:52px;box-shadow:0 24px 60px rgba(30,58,138,0.08);">
+
+    <div class="text-center mb-5">
+      <h1 style="font-size:2.4rem;margin-bottom:8px;">Find Local Professionals</h1>
+      <p class="text-muted" style="font-size:1.05rem;font-weight:600;">Join NEXTDOOR to discover verified artisans and professionals right in your neighborhood.</p>
+    </div>
+
+    <button class="btn btn-outline btn-block mb-4" style="padding:15px;gap:12px;border-color:var(--border);color:var(--slate);">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 488 512"><path fill="#4285f4" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>
+      Continue with Google
+    </button>
+
+    <div style="text-align:center;position:relative;margin-bottom:28px;">
+      <hr style="border:0;border-top:1px solid var(--border);">
+      <span style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:white;padding:0 14px;color:var(--muted);font-size:0.8rem;font-weight:700;">OR WITH EMAIL</span>
+    </div>
+
+    <form onsubmit="event.preventDefault();alert('Account Created! Welcome!');location.href='customer_dashboard.html';">
+      <div class="form-group">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-control" placeholder="Enter your email address" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" placeholder="Enter your phone number" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Location</label>
+        <input type="text" class="form-control" placeholder="Enter your location (City, State)" required>
+      </div>
+      <div class="form-group" style="margin-bottom:28px;">
+        <label class="flex-start" style="gap:10px;cursor:pointer;font-size:0.9rem;font-weight:600;color:var(--muted);">
+          <input type="checkbox" required>
+          I agree to the <a href="#" style="color:var(--secondary);">Terms</a> and <a href="#" style="color:var(--secondary);">Privacy Policy</a>.
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" style="padding:18px;font-size:1.05rem;">Create Customer Account</button>
+    </form>
+
+    <p class="text-center mt-4" style="font-size:0.9rem;font-weight:600;color:var(--muted);">Already have an account? <a href="#" style="color:var(--secondary);">Login</a></p>
+    <p class="text-center mt-2" style="font-size:0.9rem;font-weight:600;color:var(--muted);">Are you a professional? <a href="artisan_register.html" style="color:var(--secondary);">Join here →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="container text-center">
+    <div class="footer-logo">NEXT<span>DOOR</span></div>
+    <p style="color:#64748b;font-size:0.85rem;">&copy; 2026 NEXTDOOR.</p>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

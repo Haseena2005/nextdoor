@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Services – NEXTDOOR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:var(--beige);">
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo" onclick="location.href='index.html'">NEXT<span>DOOR</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="customer.html" class="active">Explore Services</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="workshops.html">Workshops</a></li>
+      <li><a href="jobs.html">Post a Job</a></li>
+      <li><a href="customer_dashboard.html">Dashboard</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+  </div>
+</nav>
+
+<div class="container" style="padding-top:48px;padding-bottom:80px;">
+  <h1 style="margin-bottom:8px;">Find the Perfect Professional</h1>
+  <p class="text-muted" style="margin-bottom:40px;font-size:1.05rem;font-weight:600;">Browse from 5,000+ verified professionals across the neighborhood.</p>
+
+  <div style="display:grid;grid-template-columns:310px 1fr;gap:36px;align-items:start;">
+    <aside class="filters-panel">
+      <h3 style="font-size:1.2rem;margin-bottom:24px;border-bottom:3px solid var(--beige-dk);padding-bottom:12px;">Filter Specialists</h3>
+      <div class="form-group">
+        <label class="form-label">Search Keyword</label>
+        <input type="text" id="filterKeyword" class="form-control" placeholder="e.g. Pottery, Mehendi..." oninput="applyFilters()">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Skill / Category</label>
+        <select id="filterSkill" class="form-control" onchange="applyFilters()">
+          <option value="all">All Skills</option>
+          <optgroup label="Home Services">
+            <option value="Electrician">Electrician</option>
+            <option value="Plumber">Plumber</option>
+            <option value="Painter">Painter</option>
+          </optgroup>
+          <optgroup label="Traditional Arts">
+            <option value="Pottery">Pottery</option>
+            <option value="Mandala Artist">Mandala Artist</option>
+            <option value="Folk Artist">Folk Artist</option>
+          </optgroup>
+          <optgroup label="Fashion & Textiles">
+            <option value="Weaver">Weaver</option>
+            <option value="Tailor">Tailor</option>
+          </optgroup>
+          <optgroup label="Events & Beauty">
+            <option value="Mehendi Artist">Mehendi Artist</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Location</label>
+        <div style="display:flex;gap:8px;">
+          <select id="filterLocation" class="form-control" onchange="applyFilters()">
+            <option value="all">All Locations</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+          </select>
+          <button class="btn btn-outline btn-sm" style="flex-shrink:0;padding:0 12px;height:48px;" onclick="detectLocation()" title="Detect My Location">📍</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Minimum Rating</label>
+        <select id="filterRating" class="form-control" onchange="applyFilters()">
+          <option value="0">Any Rating</option>
+          <option value="4.5">4.5 &amp; Above</option>
+          <option value="4.0">4.0 &amp; Above</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Sort By</label>
+        <select id="sortOption" class="form-control" onchange="applyFilters()">
+          <option value="recommended">Recommended</option>
+          <option value="rating_high">Top Rated</option>
+          <option value="price_low">Lowest Price</option>
+          <option value="exp_high">Most Experienced</option>
+        </select>
+      </div>
+      <button class="btn btn-outline btn-block" style="margin-top:8px;"
+        onclick="['filterKeyword','filterSkill','filterLocation','filterRating','sortOption'].forEach(id=>{const el=document.getElementById(id);if(el)el.value=id==='filterKeyword'?'':'all';});applyFilters();">Clear Filters</button>
+    </aside>
+
+    <main>
+      <div class="flex-between" style="background:white;padding:18px 28px;border-radius:16px;border:1.5px solid var(--border);margin-bottom:28px;box-shadow:var(--card-shadow);">
+        <p style="margin:0;font-weight:700;">
+          <strong id="resultsCount" style="color:var(--secondary);font-size:1.4rem;">9</strong>
+          <span style="color:var(--muted);"> Professionals near you</span>
+        </p>
+      </div>
+      <div class="grid-2" id="servicesGrid"></div>
+    </main>
+  </div>
+</div>
+
+<footer>
+  <div class="container text-center">
+    <div class="footer-logo">NEXT<span>DOOR</span></div>
+    <p style="color:#64748b;font-size:0.85rem;">&copy; 2026 NEXTDOOR. Trusted Hands Just Next Door.</p>
+  </div>
+</footer>
+<script>
+  function detectLocation() {
+    if (navigator.geolocation) {
+      alert("Detecting location...");
+      // Mock detection
+      setTimeout(() => {
+        document.getElementById('filterLocation').value = 'Chennai';
+        applyFilters();
+        alert("Location detected: Chennai");
+      }, 1000);
+    } else {
+      alert("Geolocation not supported.");
+    }
+  }
+</script>
+<script src="js/script.js"></script>
+</body>
+</html>

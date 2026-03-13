@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard – NEXTDOOR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:var(--beige);margin:0;">
+
+<div style="display:flex;min-height:100vh;">
+
+  <!-- Sidebar -->
+  <aside class="dashboard-sidebar">
+    <div class="sidebar-logo">NEXT<span>DOOR</span></div>
+    <nav class="sidebar-nav">
+      <a href="#" class="sidebar-link active" onclick="showTab('overview')">🏠 Dashboard</a>
+      <a href="#" class="sidebar-link" onclick="showTab('bookings')">📅 My Bookings</a>
+      <a href="#" class="sidebar-link" onclick="showTab('saved')">💖 Saved Professionals</a>
+      <a href="#" class="sidebar-link" onclick="showTab('orders')">🛍️ Order History</a>
+      <a href="#" class="sidebar-link" onclick="showTab('settings')">⚙️ Settings</a>
+    </nav>
+    <div style="padding:0 12px;">
+      <a href="index.html" class="sidebar-link" style="color:#ef4444;">🚪 Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="dashboard-main" id="dashboardContent">
+    <div id="overviewTab">
+      <div class="flex-between mb-5">
+        <div>
+          <h1 style="font-size:2.2rem;margin:0;">Welcome, John!</h1>
+          <p class="text-muted" style="font-weight:700;margin-top:6px;">You have <strong style="color:var(--secondary);">2 active bookings</strong> this week.</p>
+        </div>
+        <a href="customer.html" class="btn btn-primary">Book New Service</a>
+      </div>
+
+    <!-- Stats -->
+    <div class="grid-4 mb-5" style="gap:22px;">
+      <div class="stat-card">
+        <div class="stat-label">Active Bookings</div>
+        <div class="stat-num">2</div>
+        <div class="stat-change">1 Upcoming today</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Saved Specialists</div>
+        <div class="stat-num">5</div>
+        <div class="stat-change">2 Available now</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Products Ordered</div>
+        <div class="stat-num">3</div>
+        <div class="stat-change">1 In Transit</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Total Spending</div>
+        <div class="stat-num">₹12,400</div>
+        <div class="stat-change">Supporting local hands</div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="gap:28px;">
+      <!-- Bookings -->
+      <div style="background:white;border-radius:24px;border:1.5px solid var(--border);padding:32px;box-shadow:var(--card-shadow);">
+        <h3 class="mb-4" style="font-size:1.2rem;">Recent Bookings</h3>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="padding:18px;border:1.5px solid var(--border);border-radius:14px;">
+            <div class="flex-between">
+              <div>
+                <strong>Ravi Kumar</strong>
+                <p class="text-muted" style="font-size:0.82rem;margin-top:4px;">Oct 25 &nbsp;•&nbsp; Pottery Session</p>
+              </div>
+              <span class="badge badge-verified">Confirmed</span>
+            </div>
+          </div>
+          <div style="padding:18px;border:1.5px solid var(--border);border-radius:14px;">
+            <div class="flex-between">
+              <div>
+                <strong>Anita Devi</strong>
+                <p class="text-muted" style="font-size:0.82rem;margin-top:4px;">Nov 02 &nbsp;•&nbsp; Bridal Mehendi</p>
+              </div>
+              <span class="badge badge-nearby">Pending</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Orders -->
+      <div style="background:white;border-radius:24px;border:1.5px solid var(--border);padding:32px;box-shadow:var(--card-shadow);">
+        <h3 class="mb-4" style="font-size:1.2rem;">Order History</h3>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <div class="flex-between" style="padding:16px 0;border-bottom:1.5px solid var(--beige-dk);">
+            <div>
+              <strong>Indigo Silk Saree</strong>
+              <p class="text-muted" style="font-size:0.82rem;margin-top:2px;">₹8,500 &nbsp;•&nbsp; Lakshmi Weavers</p>
+            </div>
+            <span style="font-weight:800;color:var(--secondary);">Shipped</span>
+          </div>
+          <div class="flex-between" style="padding:16px 0;border-bottom:1.5px solid var(--beige-dk);">
+            <div>
+              <strong>Painted Clay Pot</strong>
+              <p class="text-muted" style="font-size:0.82rem;margin-top:2px;">₹1,200 &nbsp;•&nbsp; Ravi Kumar</p>
+            </div>
+            <span style="font-weight:800;color:var(--primary);">Delivered</span>
+          </div>
+          <div class="flex-between" style="padding:16px 0;">
+            <div>
+              <strong>Mandala Wall Frame</strong>
+              <p class="text-muted" style="font-size:0.82rem;margin-top:2px;">₹4,500 &nbsp;•&nbsp; Priya Sharma</p>
+            </div>
+            <span style="font-weight:800;color:var(--primary);">Delivered</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div><!-- end overviewTab -->
+
+    </div>
+
+    <!-- My Bookings Tab -->
+    <div id="bookingsTab" style="display:none;">
+      <div class="flex-between mb-5">
+        <h2 style="font-size:1.8rem;margin:0;">My Bookings</h2>
+        <a href="customer.html" class="btn btn-primary">Book New Service</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <!-- Booking Card 1 -->
+        <div style="background:white;border-radius:24px;border:1.5px solid var(--border);padding:24px;display:grid;grid-template-columns:100px 1fr auto;gap:24px;align-items:center;box-shadow:var(--card-shadow);">
+          <img src="images/potter.jpg" style="width:100px;height:100px;border-radius:16px;object-fit:cover;" alt="Ravi Kumar">
+          <div>
+            <h4 style="font-size:1.2rem;margin-bottom:6px;">Pottery Workshop & Custom Design</h4>
+            <p class="text-muted" style="margin-bottom:8px;">Professional: <strong>Ravi Kumar</strong></p>
+            <div class="flex-start" style="gap:16px;font-size:0.9rem;font-weight:600;color:var(--primary);">
+              <span>📅 Oct 25, 2026</span>
+              <span>⏰ 10:00 AM</span>
+              <span>📍 Chennai, TN</span>
+            </div>
+          </div>
+          <div style="text-align:right;">
+            <span class="badge badge-verified" style="display:inline-block;margin-bottom:12px;">Confirmed</span>
+            <button class="btn btn-outline btn-sm btn-block">View Details</button>
+          </div>
+        </div>
+        <!-- Booking Card 2 -->
+        <div style="background:white;border-radius:24px;border:1.5px solid var(--border);padding:24px;display:grid;grid-template-columns:100px 1fr auto;gap:24px;align-items:center;box-shadow:var(--card-shadow);">
+          <img src="images/mehendi_artist.jpg" style="width:100px;height:100px;border-radius:16px;object-fit:cover;" alt="Anita Devi">
+          <div>
+            <h4 style="font-size:1.2rem;margin-bottom:6px;">Bridal Mehendi Service</h4>
+            <p class="text-muted" style="margin-bottom:8px;">Professional: <strong>Anita Devi</strong></p>
+            <div class="flex-start" style="gap:16px;font-size:0.9rem;font-weight:600;color:var(--primary);">
+              <span>📅 Nov 02, 2026</span>
+              <span>⏰ 02:00 PM</span>
+              <span>📍 Home Service</span>
+            </div>
+          </div>
+          <div style="text-align:right;">
+            <span class="badge badge-nearby" style="display:inline-block;margin-bottom:12px;">Pending</span>
+            <button class="btn btn-outline btn-sm btn-block">Reschedule</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Saved Professionals Tab -->
+    <div id="savedTab" style="display:none;">
+      <h2 style="font-size:1.8rem;margin-bottom:32px;">Saved Professionals</h2>
+      <div class="grid-3" style="gap:24px;">
+        <!-- Saved Card 1 -->
+        <div style="background:white;border-radius:24px;border:1.5px solid var(--border);padding:24px;text-align:center;box-shadow:var(--card-shadow);">
+          <img src="images/potter.jpg" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:16px;border:3px solid var(--beige-dk);" alt="Ravi Kumar">
+          <h4 style="margin-bottom:4px;">Ravi Kumar</h4>
+          <p class="text-muted" style="font-size:0.85rem;margin-bottom:16px;">Master Potter</p>
+          <div class="flex-between" style="gap:10px;">
+            <a href="professional_profile.html?id=1" class="btn btn-outline btn-sm btn-block">Profile</a>
+            <button class="btn btn-primary btn-sm btn-block">Book</button>
+          </div>
+        </div>
+        <!-- Saved Card 2 -->
+        <div style="background:white;border-radius:24px;border:1.5px solid var(--border);padding:24px;text-align:center;box-shadow:var(--card-shadow);">
+          <img src="images/mandela_artist.jpg" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:16px;border:3px solid var(--beige-dk);" alt="Priya Sharma">
+          <h4 style="margin-bottom:4px;">Priya Sharma</h4>
+          <p class="text-muted" style="font-size:0.85rem;margin-bottom:16px;">Mandala Artist</p>
+          <div class="flex-between" style="gap:10px;">
+            <a href="artisan_portfolio.html?id=4" class="btn btn-outline btn-sm btn-block">Profile</a>
+            <button class="btn btn-primary btn-sm btn-block">Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order History Tab -->
+    <div id="ordersTab" style="display:none;">
+      <h2 style="font-size:1.8rem;margin-bottom:32px;">Order History</h2>
+      <div style="background:white;border-radius:24px;border:1.5px solid var(--border);overflow:hidden;box-shadow:var(--card-shadow);">
+        <table style="width:100%;border-collapse:collapse;text-align:left;">
+          <thead style="background:var(--beige);">
+            <tr>
+              <th style="padding:20px;font-size:0.9rem;text-transform:uppercase;color:var(--muted);">Product</th>
+              <th style="padding:20px;font-size:0.9rem;text-transform:uppercase;color:var(--muted);">Details</th>
+              <th style="padding:20px;font-size:0.9rem;text-transform:uppercase;color:var(--muted);">Price</th>
+              <th style="padding:20px;font-size:0.9rem;text-transform:uppercase;color:var(--muted);">Status</th>
+              <th style="padding:20px;font-size:0.9rem;text-transform:uppercase;color:var(--muted);">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1.5px solid var(--beige-dk);">
+              <td style="padding:20px;">
+                <img src="images/tailor.jpg" style="width:60px;height:60px;border-radius:8px;object-fit:cover;" alt="Indigo Silk Saree">
+              </td>
+              <td style="padding:20px;">
+                <div style="font-weight:700;">Indigo Silk Saree</div>
+                <div class="text-muted" style="font-size:0.8rem;">Lakshmi Weavers</div>
+              </td>
+              <td style="padding:20px;font-weight:700;">₹8,500</td>
+              <td style="padding:20px;"><span style="color:#f59e0b;font-weight:800;">Shipped</span></td>
+              <td style="padding:20px;color:var(--muted);">Oct 12, 2026</td>
+            </tr>
+            <tr style="border-bottom:1.5px solid var(--beige-dk);">
+              <td style="padding:20px;">
+                <img src="images/potter.jpg" style="width:60px;height:60px;border-radius:8px;object-fit:cover;" alt="Painted Clay Pot">
+              </td>
+              <td style="padding:20px;">
+                <div style="font-weight:700;">Painted Clay Pot</div>
+                <div class="text-muted" style="font-size:0.8rem;">Ravi Kumar</div>
+              </td>
+              <td style="padding:20px;font-weight:700;">₹1,200</td>
+              <td style="padding:20px;"><span style="color:var(--primary);font-weight:800;">Delivered</span></td>
+              <td style="padding:20px;color:var(--muted);">Oct 05, 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+  function showTab(tabId) {
+    const tabs = ['overviewTab', 'bookingsTab', 'savedTab', 'ordersTab', 'settingsTab'];
+    tabs.forEach(t => {
+      const el = document.getElementById(t);
+      if(el) el.style.display = 'none';
+    });
+    
+    const targetTab = document.getElementById(tabId + 'Tab');
+    if(targetTab) {
+      targetTab.style.display = 'block';
+    } else {
+      document.getElementById('overviewTab').style.display = 'block';
+      alert(tabId.charAt(0).toUpperCase() + tabId.slice(1) + ' section coming soon!');
+    }
+    
+    document.querySelectorAll('.sidebar-link').forEach(link => link.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+  }
+</script>
+</body>
+</html>
